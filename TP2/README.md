@@ -128,27 +128,13 @@ public (active)
 
 **☀️ Sur node1.lan1.tp2**
 ```
-PS C:\Users\melb3> curl site_nul.tp2
+[slayz@node1lan1 ~]$ sudo cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.1.2.12 site_nul.tp2
 
-StatusCode        : 200
-StatusDescription : OK
-Content           : <h1>Test <3</h1>
-
-RawContent        : HTTP/1.1 200 OK
-                    Connection: keep-alive
-                    Accept-Ranges: bytes
-                    Content-Length: 19
-                    Content-Type: text/html
-                    Date: Thu, 03 Oct 2024 15:10:32 GMT
-                    ETag: "66fe8756-13"
-                    Last-Modified: Thu, 03 Oct 2024 12...
-Forms             : {}
-Headers           : {[Connection, keep-alive], [Accept-Ranges, bytes], [Content-Length, 19], [Content-Type, text/html]...}
-Images            : {}
-InputFields       : {}
-Links             : {}
-ParsedHtml        : mshtml.HTMLDocumentClass
-RawContentLength  : 19
+[slayz@node1lan1 ~]$ curl site_nul.tp2
+<h1>Test <3</h1>
 ```
 
 ### 2. Or is it ? Bonus : DHCP
