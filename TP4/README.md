@@ -99,3 +99,6 @@ Sent 1 packets.
 ```
 [Voir code](./Scripts/dns_exfiltration_send.py)  
 [Voir trame Wireshark sur le dns exfiltration]('./TP4/dns_exfiltration_send.pcapng')
+
+
+Désolé je n'ai pas fais les bonus mais je deteste dev sorry Léo 😅 meow
