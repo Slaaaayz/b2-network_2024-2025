@@ -212,7 +212,6 @@ eval() est dangereux, utiliser un autre moyen pour evaluer les calculs
 
 **🌞 Proposer une remédiation système**
 
-Voici une suite d'étapes pour empêcher l'exploitation 
 ```
 useradd -r -s /sbin/nologin calcuser
 chown calcuser:calcuser /opt/calc/server.py
