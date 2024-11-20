@@ -204,7 +204,6 @@ reg ex
 
 comment empecher un programme de lancer bash
 
-syscall pour empecher l'execution de commande style ls ou cat
 
 eval() est dangereux, utiliser un autre moyen pour evaluer les calculs
 
@@ -226,7 +225,7 @@ Group=calcuser
 Restart=always
 ExecStart=/usr/bin/python3 /opt/calc/server.py
 
-[Install]
+[Install]SystemCallFilter =~ fork
 WantedBy=multi-user.target
 ```
 
@@ -235,5 +234,6 @@ WantedBy=multi-user.target
 firewall pour bloquer les connexions sortante sur le port 13337
 ```
 ```
+syscall pour empecher l'execution de commande style ls ou cat
 executer des services dans un environnement isolé donc dans des conteneurs
 ```
