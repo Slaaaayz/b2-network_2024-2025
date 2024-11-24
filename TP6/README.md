@@ -31,30 +31,11 @@ on peut faire une attaque dns rebinding
 d48126e0.7f000001.rbndr.us:54022/admin
 
 et on spam le site avec des requetes dns pour que le TTL soit toujours valide et on peut acceder a l'admin
-
 ```
-u1reSog00dWizDNSR3bindindon
-```
-
 **🌞 Proposer une version du code qui n'est pas vulnérable**
 
-```python
-TRUSTED_DOMAINS = ['example.com', 'secure-site.com']
-
-def valid_ip(ip):
-    try:
-        result = ipaddress.ip_address(ip)
-        return not (result.is_private or result.is_loopback or result.is_reserved or result.is_multicast)
-    except Exception as e:
-        return False
-
-def valid_fqdn(fqdn):
-    try:
-        ip = socket.gethostbyname(fqdn)
-        return valid_ip(ip) and (fqdn in TRUSTED_DOMAINS if TRUSTED_DOMAINS else True)
-    except Exception as e:
-        return False
-
+```
+faire un check sur la requete sur le ttl = 0 si c'est le cas alors on ne renvoie pas la reponse
 ```
 
 
@@ -91,7 +72,7 @@ There are probably a few things the administrator was missing when writing this 
        a packet, then the search stops: the packet won't be tested against any
        other rules
     
-The flag is: saperlipopete
+The flag is: ************
 ```
 
 **🌞 Proposer un jeu de règles firewall**  
@@ -120,8 +101,6 @@ slayz@debian:~$ odd-crack 'hex(sha1_raw($p)+sha1_raw($s.sha1_raw(sha1_raw($p))))
 [*] found heyheyhey=0907f80d40a6fa807c59dece79af83f7d988b141
 [*] all hashes found, shutdown requested
 [*] done, tried 4700 passwords
-
-l1tter4lly_4_c4ptur3_th3_fl4g:heyheyhey
 
 ```
 [Voir la capture Wireshark](TP6/toto.pcap)
