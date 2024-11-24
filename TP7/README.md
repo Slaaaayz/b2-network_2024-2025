@@ -159,7 +159,7 @@ rtt min/avg/max/mdev = 3.537/4.218/4.899/0.681 ms
 
 ```
 
-## II. SSH
+## II. SSH
 
 ### 1. Setup
 
